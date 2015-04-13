@@ -21,10 +21,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        //TODO: Add recording in progress
+        microphoneOutlet.hidden = !microphoneOutlet.hidden
+        
         //TODO: Add user's recording message
         println("inside the recordAudio function")
-       microphoneOutlet.hidden = !microphoneOutlet.hidden
+       
        
     }
     
