@@ -21,14 +21,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        microphoneOutlet.hidden = !microphoneOutlet.hidden
+        microphoneOutlet.hidden = false
         
         //TODO: Add user's recording message
-        println("inside the recordAudio function")
+
        
        
     }
     
+    @IBAction func stopButton(sender: UIButton) {
+        
+        microphoneOutlet.hidden = true
+    }
     
     @IBOutlet weak var microphoneOutlet: UILabel!
     

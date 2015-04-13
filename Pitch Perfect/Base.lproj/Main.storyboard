@@ -29,14 +29,33 @@
                                 <color key="textColor" red="0.49242424242424243" green="0.17352846985879372" blue="0.21323928045692536" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xO-qJ-4If">
+                                <rect key="frame" x="250" y="488" width="100" height="100"/>
+                                <state key="normal" image="stop button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V8n-m5-cRB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nab-KR-tIX" firstAttribute="top" secondItem="fzt-mw-L9b" secondAttribute="bottom" constant="8" id="B77-QA-GVR"/>
                             <constraint firstAttribute="centerX" secondItem="fzt-mw-L9b" secondAttribute="centerX" id="Su6-8c-I6x"/>
                             <constraint firstAttribute="centerY" secondItem="fzt-mw-L9b" secondAttribute="centerY" id="ViX-NB-N9h"/>
+                            <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="cQj-4H-t9h"/>
+                            <constraint firstAttribute="centerY" secondItem="6xO-qJ-4If" secondAttribute="centerY" constant="-238" id="gyS-Rq-akE"/>
+                            <constraint firstAttribute="centerY" secondItem="6xO-qJ-4If" secondAttribute="centerY" constant="-246" id="kCp-Ah-MA9"/>
                             <constraint firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" constant="-0.5" id="kyR-V1-chg"/>
+                            <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="u5Q-uF-gRb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kCp-Ah-MA9"/>
+                                <exclude reference="u5Q-uF-gRb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="microphoneOutlet" destination="Nab-KR-tIX" id="iam-nK-a7N"/>
@@ -49,5 +68,6 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="stop button" width="100" height="100"/>
     </resources>
 </document>
