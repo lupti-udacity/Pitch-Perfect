@@ -24,7 +24,13 @@ class ViewController: UIViewController {
         //TODO: Add recording in progress
         //TODO: Add user's recording message
         println("inside the recordAudio function")
+       microphoneOutlet.hidden = !microphoneOutlet.hidden
+       
     }
+    
+    
+    @IBOutlet weak var microphoneOutlet: UILabel!
+    
 
 }
 
