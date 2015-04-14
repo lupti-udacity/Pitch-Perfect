@@ -10,6 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var recordingInProgress: UILabel!
+    
+    @IBOutlet weak var stopButton: UIButton!
+
+    @IBOutlet weak var recordButton: UIButton!
+    
+    override func viewWillAppear(animated: Bool) {
+        stopButton.hidden = true
+        recordButton.enabled = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,20 +32,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        microphoneOutlet.hidden = false
-        
+        recordingInProgress.hidden = false
+        stopButton.hidden = false
+        recordButton.enabled = false
+    
+    
         //TODO: Add user's recording message
 
-       
-       
     }
     
-    @IBAction func stopButton(sender: UIButton) {
+    @IBAction func stopAudio(sender: UIButton) {
+        recordingInProgress.hidden = true
+        stopButton.hidden = true
         
-        microphoneOutlet.hidden = true
     }
-    
-    @IBOutlet weak var microphoneOutlet: UILabel!
     
 
 }
