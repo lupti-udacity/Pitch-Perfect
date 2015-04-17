@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zVc-If-ypv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
+        <scene sceneID="6Bk-XO-OBk">
+            <objects>
+                <viewController id="RKC-zX-dOA" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k6b-Tb-34H"/>
+                        <viewControllerLayoutGuide type="bottom" id="QYz-gR-w7E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="25P-Fq-HpP" customClass="UIButton">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ni-wK-7yM">
+                                <rect key="frame" x="42" y="93" width="100" height="100"/>
+                                <state key="normal" image="slowAudioButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSlowAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="iQa-Zm-5KI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-ll-Lau">
+                                <rect key="frame" x="442" y="93" width="100" height="100"/>
+                                <state key="normal" image="fastAudioButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFastAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="HsX-Jz-dUc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qON-aJ-9f3">
+                                <rect key="frame" x="275" y="501" width="50" height="50"/>
+                                <state key="normal" image="stop button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudioPlayer:" destination="RKC-zX-dOA" eventType="touchUpInside" id="c02-j0-ws4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wm6-ll-Lau" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="29" id="GLo-ID-5Ax"/>
+                            <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="qON-aJ-9f3" secondAttribute="bottom" constant="49" id="Q4O-2y-uUw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wm6-ll-Lau" secondAttribute="trailing" constant="42" id="crK-Xx-0Pq"/>
+                            <constraint firstItem="9ni-wK-7yM" firstAttribute="leading" secondItem="25P-Fq-HpP" secondAttribute="leading" constant="42" id="lBL-pr-xH6"/>
+                            <constraint firstItem="qON-aJ-9f3" firstAttribute="centerX" secondItem="25P-Fq-HpP" secondAttribute="centerX" id="qYE-gh-2yE"/>
+                            <constraint firstItem="9ni-wK-7yM" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="29" id="xpF-C8-ZGl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-Ly-Ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="229"/>
+        </scene>
+        <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -36,6 +92,7 @@
                                 </state>
                                 <connections>
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hQl-th-dqh"/>
+                                    <segue destination="RKC-zX-dOA" kind="show" id="aDa-Jw-sxI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,6 +114,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Record" id="21z-Pj-MMn"/>
                     <connections>
                         <outlet property="recordButton" destination="fzt-mw-L9b" id="FWh-oL-SYl"/>
                         <outlet property="recordingInProgress" destination="Nab-KR-tIX" id="KEI-So-nNG"/>
@@ -65,11 +123,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="424"/>
+            <point key="canvasLocation" x="-103" y="221"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fDP-Gg-Zid">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zVc-If-ypv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rAL-CR-6be">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="eCA-W3-L4U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EyC-9y-z5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-943" y="221"/>
         </scene>
     </scenes>
     <resources>
+        <image name="fastAudioButton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
+        <image name="slowAudioButton" width="100" height="100"/>
         <image name="stop button" width="50" height="50"/>
     </resources>
 </document>
