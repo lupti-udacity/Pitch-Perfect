@@ -44,21 +44,43 @@
                                     <action selector="stopAudioPlayer:" destination="RKC-zX-dOA" eventType="touchUpInside" id="c02-j0-ws4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUV-fa-mCg">
+                                <rect key="frame" x="42" y="293" width="100" height="100"/>
+                                <state key="normal" image="chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="Mxo-xK-xFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrV-8D-s8I">
+                                <rect key="frame" x="442" y="293" width="100" height="100"/>
+                                <state key="normal" image="darth vader ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playDarthvaderAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="I8B-Oy-Wxs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wm6-ll-Lau" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="29" id="GLo-ID-5Ax"/>
-                            <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="qON-aJ-9f3" secondAttribute="bottom" constant="49" id="Q4O-2y-uUw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wm6-ll-Lau" secondAttribute="trailing" constant="42" id="crK-Xx-0Pq"/>
-                            <constraint firstItem="9ni-wK-7yM" firstAttribute="leading" secondItem="25P-Fq-HpP" secondAttribute="leading" constant="42" id="lBL-pr-xH6"/>
-                            <constraint firstItem="qON-aJ-9f3" firstAttribute="centerX" secondItem="25P-Fq-HpP" secondAttribute="centerX" id="qYE-gh-2yE"/>
-                            <constraint firstItem="9ni-wK-7yM" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="29" id="xpF-C8-ZGl"/>
+                            <constraint firstItem="vrV-8D-s8I" firstAttribute="top" secondItem="RUV-fa-mCg" secondAttribute="top" id="5OC-I8-C8W"/>
+                            <constraint firstItem="vrV-8D-s8I" firstAttribute="leading" secondItem="wm6-ll-Lau" secondAttribute="leading" id="7rt-eC-wf4"/>
+                            <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="RUV-fa-mCg" secondAttribute="bottom" constant="207" id="CDb-sh-Ay5"/>
+                            <constraint firstItem="9ni-wK-7yM" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="29" id="J5P-2A-lb9"/>
+                            <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="qON-aJ-9f3" secondAttribute="bottom" constant="49" id="R4T-88-paI"/>
+                            <constraint firstItem="9ni-wK-7yM" firstAttribute="leading" secondItem="25P-Fq-HpP" secondAttribute="leadingMargin" constant="26" id="Rhv-MC-DDk"/>
+                            <constraint firstItem="wm6-ll-Lau" firstAttribute="top" secondItem="9ni-wK-7yM" secondAttribute="top" id="WUo-JF-5rB"/>
+                            <constraint firstItem="RUV-fa-mCg" firstAttribute="leading" secondItem="9ni-wK-7yM" secondAttribute="leading" id="gDL-Mw-vxK"/>
+                            <constraint firstItem="qON-aJ-9f3" firstAttribute="centerX" secondItem="25P-Fq-HpP" secondAttribute="centerX" id="qE5-l9-WHy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wm6-ll-Lau" secondAttribute="trailing" constant="42" id="zEm-mN-orc"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-Ly-Ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231" y="134"/>
+            <point key="canvasLocation" x="-880" y="128"/>
         </scene>
         <!--Record Sounds View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -123,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-896" y="134"/>
+            <point key="canvasLocation" x="-1571" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fDP-Gg-Zid">
@@ -145,6 +167,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
+        <image name="darth vader " width="100" height="100"/>
         <image name="fastAudioButton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowAudioButton" width="100" height="100"/>
