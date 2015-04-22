@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-Ly-Ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-880" y="128"/>
+            <point key="canvasLocation" x="-336" y="27"/>
         </scene>
         <!--Record Sounds View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -116,10 +116,18 @@
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hQl-th-dqh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AI-9K-08E">
+                                <rect key="frame" x="249" y="358" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nab-KR-tIX" firstAttribute="top" secondItem="fzt-mw-L9b" secondAttribute="bottom" constant="8" id="B77-QA-GVR"/>
+                            <constraint firstItem="8AI-9K-08E" firstAttribute="baseline" secondItem="Nab-KR-tIX" secondAttribute="baseline" id="KxC-gm-Ki3"/>
+                            <constraint firstItem="8AI-9K-08E" firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" id="OOk-4A-i0j"/>
                             <constraint firstAttribute="centerX" secondItem="fzt-mw-L9b" secondAttribute="centerX" id="Su6-8c-I6x"/>
                             <constraint firstAttribute="centerY" secondItem="fzt-mw-L9b" secondAttribute="centerY" id="ViX-NB-N9h"/>
                             <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="cQj-4H-t9h"/>
@@ -140,12 +148,13 @@
                         <outlet property="recordButton" destination="fzt-mw-L9b" id="FWh-oL-SYl"/>
                         <outlet property="recordingInProgress" destination="Nab-KR-tIX" id="KEI-So-nNG"/>
                         <outlet property="stopButton" destination="6xO-qJ-4If" id="ER0-iF-Hxc"/>
+                        <outlet property="tapToRecord" destination="8AI-9K-08E" id="G3q-bc-Xab"/>
                         <segue destination="RKC-zX-dOA" kind="show" identifier="stopRecording" id="Qo1-Cu-FKj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1571" y="134"/>
+            <point key="canvasLocation" x="-1027" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fDP-Gg-Zid">
@@ -163,7 +172,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyC-9y-z5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1923" y="121"/>
+            <point key="canvasLocation" x="-1795" y="130"/>
         </scene>
     </scenes>
     <resources>

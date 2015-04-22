@@ -14,6 +14,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var tapToRecord: UILabel!
     
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
@@ -21,24 +22,26 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
         recordButton.enabled = true
+        tapToRecord.hidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //Dispose of any resources that can be recreated.
     }
 
     @IBAction func recordAudio(sender: UIButton) {
+        tapToRecord.hidden = true
         recordingInProgress.hidden = false
         stopButton.hidden = false
         recordButton.enabled = false
     
-        //TODO: Add user's recording logic
+        //Add user's recording logic
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         let currentDateTime = NSDate()
         let formatter = NSDateFormatter()
@@ -46,12 +49,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         let recordingName = formatter.stringFromDate(currentDateTime)+"wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        println(filePath)
         
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
         audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
-        // added delegate = self where self is the class RecordSoundsViewController
+        //Added delegate = self where self is the class RecordSoundsViewController
         audioRecorder.delegate = self
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
@@ -59,20 +61,19 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
-        //TODO: To save the recorded audio
+        //To save the recorded audio
         //initize the variable recordAudio
         
         if(flag) {
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url!, title: recorder.url.lastPathComponent!)
+            
         }else{
             println("Recording was not successfully")
             recordButton.enabled = true
             stopButton.hidden = true
         }
         
-        //TODO: To transition to next scene i.e. to perform segue
+        //To transition to next scene i.e. to perform segue
         self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
     }
     
