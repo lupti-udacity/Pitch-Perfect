@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-Ly-Ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="27"/>
+            <point key="canvasLocation" x="-316" y="24"/>
         </scene>
         <!--Record Sounds View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -116,8 +116,14 @@
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hQl-th-dqh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to pause" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i9-zt-FB7">
+                                <rect key="frame" x="250" y="372" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AI-9K-08E">
-                                <rect key="frame" x="249" y="358" width="102" height="21"/>
+                                <rect key="frame" x="249" y="372" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -126,14 +132,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nab-KR-tIX" firstAttribute="top" secondItem="fzt-mw-L9b" secondAttribute="bottom" constant="8" id="B77-QA-GVR"/>
-                            <constraint firstItem="8AI-9K-08E" firstAttribute="baseline" secondItem="Nab-KR-tIX" secondAttribute="baseline" id="KxC-gm-Ki3"/>
-                            <constraint firstItem="8AI-9K-08E" firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" id="OOk-4A-i0j"/>
+                            <constraint firstItem="8AI-9K-08E" firstAttribute="baseline" secondItem="7i9-zt-FB7" secondAttribute="baseline" id="LZ5-d1-h6C"/>
+                            <constraint firstItem="7i9-zt-FB7" firstAttribute="leading" secondItem="fzt-mw-L9b" secondAttribute="leading" id="Mt9-BV-BYE"/>
+                            <constraint firstItem="7i9-zt-FB7" firstAttribute="top" secondItem="fzt-mw-L9b" secondAttribute="bottom" constant="22" id="OGM-g2-kdE"/>
                             <constraint firstAttribute="centerX" secondItem="fzt-mw-L9b" secondAttribute="centerX" id="Su6-8c-I6x"/>
                             <constraint firstAttribute="centerY" secondItem="fzt-mw-L9b" secondAttribute="centerY" id="ViX-NB-N9h"/>
                             <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="cQj-4H-t9h"/>
                             <constraint firstAttribute="centerY" secondItem="6xO-qJ-4If" secondAttribute="centerY" constant="-238" id="gyS-Rq-akE"/>
                             <constraint firstAttribute="centerY" secondItem="6xO-qJ-4If" secondAttribute="centerY" constant="-246" id="kCp-Ah-MA9"/>
                             <constraint firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" constant="-0.5" id="kyR-V1-chg"/>
+                            <constraint firstItem="8AI-9K-08E" firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" id="rvo-VI-aLK"/>
                             <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="u5Q-uF-gRb"/>
                         </constraints>
                         <variation key="default">
@@ -148,13 +156,14 @@
                         <outlet property="recordButton" destination="fzt-mw-L9b" id="FWh-oL-SYl"/>
                         <outlet property="recordingInProgress" destination="Nab-KR-tIX" id="KEI-So-nNG"/>
                         <outlet property="stopButton" destination="6xO-qJ-4If" id="ER0-iF-Hxc"/>
+                        <outlet property="tapToPause" destination="7i9-zt-FB7" id="189-qV-oqy"/>
                         <outlet property="tapToRecord" destination="8AI-9K-08E" id="G3q-bc-Xab"/>
                         <segue destination="RKC-zX-dOA" kind="show" identifier="stopRecording" id="Qo1-Cu-FKj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1027" y="27"/>
+            <point key="canvasLocation" x="-999" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fDP-Gg-Zid">
