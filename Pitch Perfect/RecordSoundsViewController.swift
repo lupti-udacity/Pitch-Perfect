@@ -123,9 +123,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
             recordingSessionIsOn = false
         }
         
-        
     }
-    
 
 }
 
