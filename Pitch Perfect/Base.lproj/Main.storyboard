@@ -62,9 +62,17 @@
                                     <action selector="playDarthvaderAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="I8B-Oy-Wxs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-pU-F3q">
+                                <rect key="frame" x="260" y="233" width="81" height="30"/>
+                                <state key="normal" title="Test Reverb"/>
+                                <connections>
+                                    <action selector="playTestReverb:" destination="RKC-zX-dOA" eventType="touchUpInside" id="aNe-dI-SSA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GI8-pU-F3q" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="169" id="2T5-hw-8ta"/>
                             <constraint firstItem="vrV-8D-s8I" firstAttribute="top" secondItem="RUV-fa-mCg" secondAttribute="top" id="5OC-I8-C8W"/>
                             <constraint firstItem="vrV-8D-s8I" firstAttribute="leading" secondItem="wm6-ll-Lau" secondAttribute="leading" id="7rt-eC-wf4"/>
                             <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="RUV-fa-mCg" secondAttribute="bottom" constant="207" id="CDb-sh-Ay5"/>
@@ -74,13 +82,14 @@
                             <constraint firstItem="wm6-ll-Lau" firstAttribute="top" secondItem="9ni-wK-7yM" secondAttribute="top" id="WUo-JF-5rB"/>
                             <constraint firstItem="RUV-fa-mCg" firstAttribute="leading" secondItem="9ni-wK-7yM" secondAttribute="leading" id="gDL-Mw-vxK"/>
                             <constraint firstItem="qON-aJ-9f3" firstAttribute="centerX" secondItem="25P-Fq-HpP" secondAttribute="centerX" id="qE5-l9-WHy"/>
+                            <constraint firstItem="GI8-pU-F3q" firstAttribute="centerX" secondItem="qON-aJ-9f3" secondAttribute="centerX" id="yCr-5P-ETQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wm6-ll-Lau" secondAttribute="trailing" constant="42" id="zEm-mN-orc"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-Ly-Ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-316" y="24"/>
+            <point key="canvasLocation" x="-732" y="36"/>
         </scene>
         <!--Record Sounds View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -163,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-999" y="30"/>
+            <point key="canvasLocation" x="-1397" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fDP-Gg-Zid">

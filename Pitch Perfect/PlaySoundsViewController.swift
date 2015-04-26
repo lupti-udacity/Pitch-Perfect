@@ -56,6 +56,9 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(-1000)
     }
     
+    @IBAction func playTestReverb(sender: UIButton) {
+        playAudioWithReverb()
+    }
     
     func playAudioWithVariablePitch(pitch: Float) {
         audioPlayer.stop()
@@ -73,6 +76,36 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+        
+    }
+    
+    func playAudioWithReverb() {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        var audioPlayerReverbNode = AVAudioUnitReverb()
+        var audioPlayerDistortNode = AVAudioUnitDistortion()
+        var audioPlayerDelayNode = AVAudioUnitDelay()
+        var audioPlayerMixerNode = AVAudioMixerNode()
+        
+        audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attachNode(audioPlayerReverbNode)
+        audioEngine.attachNode(audioPlayerDistortNode)
+        audioEngine.attachNode(audioPlayerDelayNode)
+        audioEngine.attachNode(audioPlayerMixerNode)
+        
+        audioEngine.connect(audioPlayerNode, to: audioPlayerReverbNode, format: nil)
+        audioEngine.connect(audioPlayerReverbNode, to: audioPlayerDistortNode, format: nil)
+        audioEngine.connect(audioPlayerDistortNode, to: audioPlayerDelayNode, format: nil)
+        audioEngine.connect(audioPlayerDelayNode, to: audioPlayerMixerNode, format: nil)
+        audioEngine.connect(audioPlayerMixerNode, to: audioEngine.outputNode, format: nil)
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
         audioEngine.startAndReturnError(nil)
         
         audioPlayerNode.play()
