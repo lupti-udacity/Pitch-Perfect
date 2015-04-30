@@ -67,6 +67,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         if (!recordingSessionIsOn) {
             createFilePath()
             recordingSessionIsOn = true
+        } else {
+            // recording session is already on, do nothing and go to the next recording or pausing action
         }
         // recording
         if (!tapToRecord.hidden) {
@@ -74,7 +76,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
             recordingInProgress.text = "Recording"
             tapToRecord.hidden = true
             tapToPause.hidden = false
-            
         } else {
             // pausing
             audioRecorder.pause()
@@ -82,7 +83,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
             tapToRecord.hidden = false
             tapToPause.hidden = true
         }
-        
       }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
@@ -92,7 +92,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         if(flag) {
             recordedAudio = RecordedAudio(filePathUrl: recorder.url!, title: recorder.url.lastPathComponent!)
             
-        }else{
+        } else {
             println("Recording was not successfully")
             recordButton.enabled = true
             stopButton.hidden = true
@@ -107,7 +107,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
             let playSoundsVC:PlaySoundsViewController=segue.destinationViewController as!PlaySoundsViewController
             let data = sender as! RecordedAudio
             playSoundsVC.receivedAudio = data
-            
         }
     }
    
@@ -122,8 +121,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         if (recordingSessionIsOn) {
             recordingSessionIsOn = false
         }
-        
     }
-
 }
 
