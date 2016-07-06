@@ -27,10 +27,10 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Instantiate audioPlayer, audioEngine and audioFile
-        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
+        audioPlayer = try? AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         audioPlayer.enableRate = true
         audioEngine = AVAudioEngine()
-        audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
+        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl)
         
     }
 
@@ -79,11 +79,11 @@ class PlaySoundsViewController: UIViewController {
         stopAudioPlayerAndEngine()
         
         //Instantiate player and attach it to the audio engine
-        var audioPlayerNode = AVAudioPlayerNode()
+        let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
         //Add pitch rate from parameter to the audio engine by attaching it
-        var changePitchEffect = AVAudioUnitTimePitch()
+        let changePitchEffect = AVAudioUnitTimePitch()
         changePitchEffect.pitch = pitch
         audioEngine.attachNode(changePitchEffect)
         
@@ -93,7 +93,11 @@ class PlaySoundsViewController: UIViewController {
         
         //Attach audio file to the audio engine and start the engine
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        audioEngine.startAndReturnError(nil)
+        do {
+            // try audioEngine.startAndReturnError()
+            try audioEngine.start()
+        } catch _ {
+        }
         
         //Play the audio player
         audioPlayerNode.play()
@@ -104,11 +108,11 @@ class PlaySoundsViewController: UIViewController {
         stopAudioPlayerAndEngine()
         
         //First declare the necessary nodes
-        var audioPlayerNode = AVAudioPlayerNode()
-        var audioPlayerReverbNode = AVAudioUnitReverb()
-        var audioPlayerDistortNode = AVAudioUnitDistortion()
-        var audioPlayerDelayNode = AVAudioUnitDelay()
-        var audioPlayerMixerNode = AVAudioMixerNode()
+        let audioPlayerNode = AVAudioPlayerNode()
+        let audioPlayerReverbNode = AVAudioUnitReverb()
+        let audioPlayerDistortNode = AVAudioUnitDistortion()
+        let audioPlayerDelayNode = AVAudioUnitDelay()
+        let audioPlayerMixerNode = AVAudioMixerNode()
         
         //Attach nodes to the audioEngine
         audioEngine.attachNode(audioPlayerNode)
@@ -125,8 +129,12 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.connect(audioPlayerMixerNode, to: audioEngine.outputNode, format: nil)
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         
-        //Start the audioEngine in reverb mode
-        audioEngine.startAndReturnError(nil)
+        do {
+            //Start the audioEngine in reverb mode
+            try audioEngine.start()
+            //try audioEngine.startAndReturnError()
+        } catch _ {
+        }
         
         //Play in reverb mode
         audioPlayerNode.play()

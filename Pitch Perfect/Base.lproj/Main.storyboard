@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zVc-If-ypv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zVc-If-ypv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ni-wK-7yM">
-                                <rect key="frame" x="42" y="93" width="100" height="100"/>
+                                <rect key="frame" x="46" y="93" width="100" height="100"/>
                                 <state key="normal" image="slowAudioButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-ll-Lau">
-                                <rect key="frame" x="442" y="93" width="100" height="100"/>
+                                <rect key="frame" x="438" y="93" width="100" height="100"/>
                                 <state key="normal" image="fastAudioButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -45,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUV-fa-mCg">
-                                <rect key="frame" x="42" y="293" width="100" height="100"/>
+                                <rect key="frame" x="46" y="293" width="100" height="100"/>
                                 <state key="normal" image="chipmunk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -53,20 +54,20 @@
                                     <action selector="playChipmunkAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="Mxo-xK-xFr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-pU-F3q">
+                                <rect key="frame" x="259" y="233" width="82" height="30"/>
+                                <state key="normal" title="Test Reverb"/>
+                                <connections>
+                                    <action selector="playTestReverb:" destination="RKC-zX-dOA" eventType="touchUpInside" id="aNe-dI-SSA"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrV-8D-s8I">
-                                <rect key="frame" x="442" y="293" width="100" height="100"/>
+                                <rect key="frame" x="438" y="293" width="100" height="100"/>
                                 <state key="normal" image="darth vader ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playDarthvaderAudio:" destination="RKC-zX-dOA" eventType="touchUpInside" id="I8B-Oy-Wxs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-pU-F3q">
-                                <rect key="frame" x="260" y="233" width="81" height="30"/>
-                                <state key="normal" title="Test Reverb"/>
-                                <connections>
-                                    <action selector="playTestReverb:" destination="RKC-zX-dOA" eventType="touchUpInside" id="aNe-dI-SSA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,11 +76,14 @@
                             <constraint firstItem="GI8-pU-F3q" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="169" id="2T5-hw-8ta"/>
                             <constraint firstItem="vrV-8D-s8I" firstAttribute="top" secondItem="RUV-fa-mCg" secondAttribute="top" id="5OC-I8-C8W"/>
                             <constraint firstItem="vrV-8D-s8I" firstAttribute="leading" secondItem="wm6-ll-Lau" secondAttribute="leading" id="7rt-eC-wf4"/>
-                            <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="RUV-fa-mCg" secondAttribute="bottom" constant="207" id="CDb-sh-Ay5"/>
+                            <constraint firstItem="RUV-fa-mCg" firstAttribute="leading" secondItem="25P-Fq-HpP" secondAttribute="leadingMargin" constant="26" id="BWm-ei-PBE"/>
                             <constraint firstItem="9ni-wK-7yM" firstAttribute="top" secondItem="k6b-Tb-34H" secondAttribute="bottom" constant="29" id="J5P-2A-lb9"/>
                             <constraint firstItem="QYz-gR-w7E" firstAttribute="top" secondItem="qON-aJ-9f3" secondAttribute="bottom" constant="49" id="R4T-88-paI"/>
                             <constraint firstItem="9ni-wK-7yM" firstAttribute="leading" secondItem="25P-Fq-HpP" secondAttribute="leadingMargin" constant="26" id="Rhv-MC-DDk"/>
+                            <constraint firstItem="vrV-8D-s8I" firstAttribute="top" secondItem="GI8-pU-F3q" secondAttribute="bottom" constant="30" id="WL6-vw-kU4"/>
                             <constraint firstItem="wm6-ll-Lau" firstAttribute="top" secondItem="9ni-wK-7yM" secondAttribute="top" id="WUo-JF-5rB"/>
+                            <constraint firstItem="GI8-pU-F3q" firstAttribute="top" secondItem="wm6-ll-Lau" secondAttribute="bottom" constant="40" id="ZSW-oa-F0G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vrV-8D-s8I" secondAttribute="trailing" constant="42" id="fTN-J8-bc0"/>
                             <constraint firstItem="RUV-fa-mCg" firstAttribute="leading" secondItem="9ni-wK-7yM" secondAttribute="leading" id="gDL-Mw-vxK"/>
                             <constraint firstItem="qON-aJ-9f3" firstAttribute="centerX" secondItem="25P-Fq-HpP" secondAttribute="centerX" id="qE5-l9-WHy"/>
                             <constraint firstItem="GI8-pU-F3q" firstAttribute="centerX" secondItem="qON-aJ-9f3" secondAttribute="centerX" id="yCr-5P-ETQ"/>
@@ -89,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-Ly-Ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732" y="36"/>
+            <point key="canvasLocation" x="924" y="420"/>
         </scene>
         <!--Record Sounds View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -111,7 +115,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-KR-tIX">
-                                <rect key="frame" x="264" y="358" width="73" height="21"/>
+                                <rect key="frame" x="264" y="358" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.49242424242424243" green="0.17352846985879372" blue="0.21323928045692536" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -132,7 +136,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AI-9K-08E">
-                                <rect key="frame" x="249" y="372" width="102" height="21"/>
+                                <rect key="frame" x="250" y="372" width="103" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="8P6-lc-a4D"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -147,18 +154,10 @@
                             <constraint firstAttribute="centerX" secondItem="fzt-mw-L9b" secondAttribute="centerX" id="Su6-8c-I6x"/>
                             <constraint firstAttribute="centerY" secondItem="fzt-mw-L9b" secondAttribute="centerY" id="ViX-NB-N9h"/>
                             <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="cQj-4H-t9h"/>
-                            <constraint firstAttribute="centerY" secondItem="6xO-qJ-4If" secondAttribute="centerY" constant="-238" id="gyS-Rq-akE"/>
-                            <constraint firstAttribute="centerY" secondItem="6xO-qJ-4If" secondAttribute="centerY" constant="-246" id="kCp-Ah-MA9"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6xO-qJ-4If" secondAttribute="bottom" constant="37" id="e9J-sd-XPE"/>
                             <constraint firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" constant="-0.5" id="kyR-V1-chg"/>
                             <constraint firstItem="8AI-9K-08E" firstAttribute="centerX" secondItem="Nab-KR-tIX" secondAttribute="centerX" id="rvo-VI-aLK"/>
-                            <constraint firstAttribute="centerX" secondItem="6xO-qJ-4If" secondAttribute="centerX" id="u5Q-uF-gRb"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="kCp-Ah-MA9"/>
-                                <exclude reference="u5Q-uF-gRb"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="21z-Pj-MMn"/>
                     <connections>
@@ -172,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="36"/>
+            <point key="canvasLocation" x="211" y="420"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fDP-Gg-Zid">
@@ -190,7 +189,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyC-9y-z5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1795" y="130"/>
+            <point key="canvasLocation" x="-515" y="420"/>
         </scene>
     </scenes>
     <resources>
